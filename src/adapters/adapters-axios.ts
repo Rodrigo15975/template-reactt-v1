@@ -1,0 +1,31 @@
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+
+export class MethodsAxios implements MethodsAxiosInterface {
+  private readonly axiosAdapter: AxiosInstance;
+  constructor(urlBase: string) {
+    // add BASE-URL
+    this.axiosAdapter = axios.create({
+      baseURL: urlBase,
+    });
+  }
+  async DELETE<T>(url: string) {
+    const { data } = await this.axiosAdapter.delete<T>(url);
+    return data;
+  }
+  async PATCH<T>(url: string, dataPATCH?: T, config?: AxiosRequestConfig) {
+    const { data } = await this.axiosAdapter.patch<T>(url, dataPATCH, config);
+    return data;
+  }
+  async GET<T>(url: string, config?: AxiosRequestConfig) {
+    const { data } = await this.axiosAdapter.get<T>(url, config);
+    return data;
+  }
+  async POST<T>(url: string, dataPOST?: T, config?: AxiosRequestConfig) {
+    const { data } = await this.axiosAdapter.post<T>(url, dataPOST, config);
+    return data;
+  }
+  async PUT<T>(url: string, dataPUT?: T, config?: AxiosRequestConfig) {
+    const { data } = await this.axiosAdapter.put<T>(url, dataPUT, config);
+    return data;
+  }
+}
