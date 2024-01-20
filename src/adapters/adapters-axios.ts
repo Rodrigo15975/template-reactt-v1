@@ -20,7 +20,7 @@ export class MethodsAxios implements MethodsAxiosInterface {
     const { data } = await this.axiosAdapter.get<T>(url, config);
     return data;
   }
-  async POST<T>(url: string, dataPOST?: T, config?: AxiosRequestConfig) {
+  async POST<T, D>(url: string, dataPOST?: D, config?: AxiosRequestConfig) {
     const { data } = await this.axiosAdapter.post<T>(url, dataPOST, config);
     return data;
   }
