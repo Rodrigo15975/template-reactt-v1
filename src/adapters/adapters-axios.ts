@@ -8,6 +8,7 @@ export class MethodsAxios implements MethodsAxiosInterface {
       baseURL: urlBase,
     });
   }
+
   async DELETE<T>(url: string) {
     const { data } = await this.axiosAdapter.delete<T>(url);
     return data;
@@ -16,6 +17,7 @@ export class MethodsAxios implements MethodsAxiosInterface {
     const { data } = await this.axiosAdapter.patch<T>(url, dataPATCH, config);
     return data;
   }
+
   async GET<T>(url: string, config?: AxiosRequestConfig) {
     const { data } = await this.axiosAdapter.get<T>(url, config);
     return data;
