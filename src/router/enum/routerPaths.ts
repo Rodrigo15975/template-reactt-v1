@@ -5,5 +5,5 @@ export enum PathsPublic {
 }
 export enum PathsProtected {
   // EXAMPLE
-  DASHBOARD = "/DASHBOARD",
+  DASHBOARD = "/dashboard",
 }

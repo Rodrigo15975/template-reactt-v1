@@ -1,10 +1,9 @@
-import Button from "@/components/Common/Button/Button";
 import { FC } from "react";
 
 const Home: FC = () => {
   return (
     <>
-      <Button />
+      <h1>Home</h1>
     </>
   );
 };
