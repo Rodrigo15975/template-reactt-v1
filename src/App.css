@@ -1,0 +1,26 @@
+.active {
+  background: linear-gradient(
+    45deg,
+    rgba(93, 34, 255, 0.753) 0%,
+    rgb(51, 98, 255) 100%
+  );
+  color: white !important ;
+}
+.bg-common {
+  background: linear-gradient(
+    45deg,
+    rgb(149, 111, 255) 0%,
+    rgb(108, 142, 255) 100%
+  );
+}
+
+.title-common {
+  background: linear-gradient(
+    45deg,
+    rgba(93, 34, 255) 100%,
+    rgb(16, 72, 255) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
