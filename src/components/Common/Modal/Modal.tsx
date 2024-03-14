@@ -8,7 +8,7 @@ const Modal: FC<PropsModal> = ({ className, children, onClick, type }) => {
     return (
       <m.div
         onClick={onClick}
-        className={`fixed z-[100] bg-white/50 inset-0 flex items-end justify-end`}
+        className={`px-[2rem] fixed z-[100] bg-white/50 inset-0 flex items-end justify-end`}
         variants={modalVariants}
         initial={"initial"}
         exit={"exit"}
@@ -23,7 +23,7 @@ const Modal: FC<PropsModal> = ({ className, children, onClick, type }) => {
   return (
     <m.div
       onClick={onClick}
-      className={`fixed z-[100] bg-white/50 inset-0 flex justify-center items-center`}
+      className={`px-[2rem] fixed z-[100] bg-white/50 inset-0 flex justify-center items-center`}
       variants={modalVariants}
       initial={"initial"}
       exit={"exit"}

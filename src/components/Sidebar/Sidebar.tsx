@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
-import { PropsSidebar } from "./types/typesLinks";
 import { NavLink } from "react-router-dom";
+import { PropsSidebar } from "./types/typesLinks";
 
 const SidebarMenu: FC<PropsSidebar> = ({ menu, rootStyles }) => {
   // Toggle habre el sidebar en mobile, dale un estado global con zustand
@@ -24,47 +24,49 @@ const SidebarMenu: FC<PropsSidebar> = ({ menu, rootStyles }) => {
   return (
     <Sidebar
       style={{
-        background:
-          "linear-gradient(190deg, rgba(255,255,255,1) 0%, #e8deff 100%)",
+        background: "linear-gradient(190deg, #ffffff 0%, #ffffff 100%)",
       }}
       backgroundColor={screenMobile ? "white" : ""}
       toggled={toggled}
       onBackdropClick={() => setToggled(false)}
       rootStyles={{ ...rootStyles }}
-      className="min-h-screen"
+      className="min-h-screen shadow-xl"
       // 992px
       breakPoint="lg"
     >
-      <Menu
-        menuItemStyles={{
-          // Quita el hover
-          button: {
-            ":hover": {},
-          },
-        }}
-      >
-        {menu.map((link) => (
-          <div key={link.path}>
-            <MenuItem
-              icon={link.icon}
-              component={<NavLink to={link.path}></NavLink>}
-            >
-              {link.label}
-            </MenuItem>
-            {link.subMenu?.map((subMenu) => (
-              <SubMenu
-                icon={subMenu.icon}
-                key={subMenu.path}
-                label={subMenu.labelSubMenu}
+      <div className="flex flex-col justify-between h-full">
+        <Menu>
+          <p className=" text-secondary/50 my-[1rem] border-b pb-2 px-[2rem]">
+            Menu
+          </p>
+          {menu.map((link) => (
+            <div key={link.path}>
+              <MenuItem
+                icon={link.icon}
+                component={<NavLink to={link.path}></NavLink>}
               >
-                <MenuItem component={<NavLink to={subMenu.path}></NavLink>}>
-                  {subMenu.label}
-                </MenuItem>
-              </SubMenu>
-            ))}
-          </div>
-        ))}
-      </Menu>
+                {link.label}
+              </MenuItem>
+              {link.subMenu && (
+                <SubMenu
+                  icon={link.subMenu[0].iconSubMenu}
+                  label={link.subMenu[0].labelSubMenu}
+                >
+                  {link.subMenu?.map((subMenu) => (
+                    <MenuItem
+                      key={subMenu.path}
+                      icon={subMenu.icon}
+                      component={<NavLink to={subMenu.path}></NavLink>}
+                    >
+                      {subMenu.label}
+                    </MenuItem>
+                  ))}
+                </SubMenu>
+              )}
+            </div>
+          ))}
+        </Menu>
+      </div>
     </Sidebar>
   );
 };

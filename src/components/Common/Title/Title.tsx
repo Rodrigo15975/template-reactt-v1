@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 type PropsTitle = {
   label: string;
-  className: string;
+  className?: string;
   children?: ReactNode;
   type: "h1" | "h2";
 };

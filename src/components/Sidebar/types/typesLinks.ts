@@ -11,8 +11,9 @@ export type PropsSidebar = {
 type SidebarLinksSubMenu = {
   path: string;
   label: string;
-  labelSubMenu?: string;
   icon: React.JSX.Element;
+  labelSubMenu?: string;
+  iconSubMenu?: React.JSX.Element;
 };
 
 // Links- not with- sub-menu

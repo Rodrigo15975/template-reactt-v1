@@ -3,8 +3,8 @@ import { FC, ReactNode } from "react";
 type PropsButton = {
   label: string;
   type: "button" | "reset" | "submit";
-  btnDefault: boolean;
-  onClick: () => void;
+  btnDefault?: boolean;
+  onClick?: () => void;
   className: string;
   children?: ReactNode;
 };
@@ -21,7 +21,7 @@ const Button: FC<PropsButton> = ({
     return (
       <button
         onClick={onClick}
-        className="bg-light border hover:shadow-none transition rounded-full shadow-md"
+        className={`bg-light border hover:shadow-none transition rounded-full shadow-md ${className}`}
       >
         {children}
         {label}
