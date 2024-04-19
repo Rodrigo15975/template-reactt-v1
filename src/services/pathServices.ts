@@ -1,0 +1,18 @@
+export const enum PathServices {
+  URL = "https://backend-socios-production.up.railway.app",
+  EMPRESA = "/empresa",
+  FILE = "/cloudinary",
+  LOGIN = "/auth/login",
+  ACCESSTOKEN = "/auth/verify",
+  LOGOUT = "/auth/logout",
+  PROFILE = "/auth/profile",
+  USUARIOS = "/usuarios",
+  TIPO_SOCIO = "/tipo-socio",
+  CARGO = "/cargo",
+  TIPO_USUARIO = "/tipo-usuario",
+  ACTIVIDAD = "/actividad",
+  SECTOR = "/sector",
+  DNI = "/api-dni?dni=",
+  RUC = "/ruc?ruc=",
+  SOCIO = "/socios",
+}

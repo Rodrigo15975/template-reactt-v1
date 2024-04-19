@@ -2,6 +2,9 @@ export default {
   fontFamily: {
     robotoSlab: `"Roboto Slab", serif`,
   },
+  colors: {
+    text_primary: "#1E1E1E",
+  },
   fontWeight: {
     robotoSlab_100: 100,
     robotoSlab_200: "200",
